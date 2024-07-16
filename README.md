@@ -86,6 +86,7 @@ class task:
         return test3list
 <br>
 if __name__ == "__main__":
+<br>
     test1 = task()
     newlist = test1.test2()
     print(newlist)
