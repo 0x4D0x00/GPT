@@ -31,6 +31,7 @@ if __name__ == '__main__':
 #   about bar usage method
 #   关于进度条工具使用方法
 """
+<br>
 class task:
 <br>
     def __init__(self):
@@ -49,12 +50,19 @@ class task:
         for i in self.pbar:
         <br>
         #   Focus on the above 2 lines.
+        <br>
         #   重点关注以上 2 行。
+        <br>
             if i % 2 == 0:
+            <br>
                 time.sleep(0.05)
+                <br>
                 self.newlist.append(i)
+        <br>
         return self.newlist
+    <br>
     def test2(self):
+        <br>
         mylist = []
         """
         #   Inherit the upper and lower tasks, and dynamically add the number of tasks using the add method (tasks are iterable objects).
