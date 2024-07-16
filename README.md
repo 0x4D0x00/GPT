@@ -1,6 +1,7 @@
 """
 #   About all GPT usage method.txt
 """
+<br>
 """
 #   about mtti usage method
 #   关于多线程工具使用方法
@@ -31,15 +32,22 @@ if __name__ == '__main__':
 #   关于进度条工具使用方法
 """
 class task:
+<br>
     def __init__(self):
+    <br>
         self.newlist = []
+    <br>
     def test(self, mylist):
+        <br>
         """
         #   Following the logic of the display function, after executing the test2 function, continue adding tasks using the add method.
         #   按照展示函数逻辑, 执行结束test2函数之后, 通过add方法继续添加任务。
         """
+        <br>
         self.pbar.add(mylist, last=True, task="test")
+        <br>
         for i in self.pbar:
+        <br>
         #   Focus on the above 2 lines.
         #   重点关注以上 2 行。
             if i % 2 == 0:
@@ -70,9 +78,13 @@ class task:
         for i in bar(range(10,20)):
         #   Focus on the above 1 lines.
         #   重点关注以上 1 行。
+            <br>
             time.sleep(1)
+            <br>
             test3list.append(i)
+        <br>
         return test3list
+<br>
 if __name__ == "__main__":
     test1 = task()
     newlist = test1.test2()
