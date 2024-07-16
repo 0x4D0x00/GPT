@@ -16,6 +16,11 @@ if __name__ == '__main__':
     thread_list = mtti.thread_execute_bar(demo, demo_list)
     # or thread_list = mtti.thread_execute_bar(demo, demo_list, task="My Task", max_workers=10)
     print(thread_list)
+
+
+
+
+
 """
 #   About bar usage method
 #   关于进度条工具使用方法
@@ -69,6 +74,11 @@ if __name__ == "__main__":
     print(newlist)
     test3list = test1.test3()
     print(test3list)
+
+
+
+
+
 """
 #   about network usage method
 #   关于网络诊断工具示例用法
@@ -102,4 +112,60 @@ if __name__ == '__main__':
     }
     response = diagnostics.request("get", target)
     print(len(response))
+
+
+
+
+
+"""
+#   about gain usage method
+#   关于 gain 示例用法
+"""
+if __name__ == '__main__':
+    get = gain()
+    """
+    #   提取IP地址
+    """
+    ip = get.extract_ip('Example text with IP 192.168.1.1 in it')
+    print('Extracted IP:', ip)
+    """
+    #   提取域名
+    """
+    domain = get.extract_domain('Example text with Domain example.com in it')
+    print('Extracted Domain:', domain)
+    """
+    #   获取文件大小
+    """
+    logs_path = '正面攻击告警日志20240712165359.xls'
+    file_size = get.extract_file_size(logs_path)
+    print(file_size)
+
+
+
+
+"""
+#   about readwrite usage methods
+#   关于读写工具示例用法
+"""
+if __name__ == '__main__':
+    rw = readwrite()
+    file_path = 'domain_list.txt'
+    logs_path = '正面攻击告警日志20240712165359.xls'
+    """
+    #   read_file
+    #   读文件,to_list是生成列表
+    """
+    rw.read_file(file_path)
+    rw.read_file_to_list(file_path)
+    """
+    #   write_file
+    #   写文件,lines是列表
+    """
+    rw.write_file(file_path, lines=['0x4D', '0x4D', '0x4D'])
+    """
+    #   read_excel
+    #   读excel,生成列表
+    """
+    index = rw.read_excel(logs_path)
+    print(index)
 ```
