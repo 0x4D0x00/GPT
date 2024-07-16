@@ -1,5 +1,20 @@
-'''
-"""
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc0">"""
 #   About all GPT usage method.txt
 """
 """
@@ -68,5 +83,5 @@ if __name__ == "__main__":
     newlist = test1.test2()
     print(newlist)
     test3list = test1.test3()
-    print(test3list)
-'''
+    print(test3list)</span></div></body>
+</html>
