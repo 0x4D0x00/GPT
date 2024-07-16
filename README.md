@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # or thread_list = mtti.thread_execute_bar(demo, demo_list, task="My Task", max_workers=10)
     print(thread_list)
 """
-#   about bar usage method
+#   About bar usage method
 #   关于进度条工具使用方法
 """
 class task:
@@ -69,4 +69,37 @@ if __name__ == "__main__":
     print(newlist)
     test3list = test1.test3()
     print(test3list)
+"""
+#   about network usage method
+#   关于网络诊断工具示例用法
+"""
+if __name__ == '__main__':
+    diagnostics = network()
+    domain = 'www.baidu.com'
+    """
+    #   ping 操作示例用法
+    """
+    success, response = diagnostics.ping(domain)
+    print('Ping successful:', success)
+    print('Response:', response)
+    """
+    #   nslookup 操作示例用法
+    """
+    output = diagnostics.nslookup(domain)
+    print(f"Result: {output[0]}, Info: {output[1]}")
+    """
+    #   refresh 操作示例用法
+    """
+    success = diagnostics.refresh()
+    print('Refresh successful:', success)
+    """
+    #   request 操作示例用法
+    """
+    target = "https://www.baidu.com"
+    data = {
+        "username": "admin",
+        "password": "password"
+    }
+    response = diagnostics.request("get", target)
+    print(len(response))
 ```
