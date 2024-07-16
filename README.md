@@ -1,4 +1,7 @@
 """
+#   About all GPT usage method.txt
+"""
+"""
 #   about mtti usage method
 #   关于多线程工具使用方法
 """
