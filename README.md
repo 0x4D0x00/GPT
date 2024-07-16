@@ -1,4 +1,10 @@
 ```python
+"""Author: 0x4D, 桐镜
+#   Update Time: 2020/07/08
+#   Version: 1.0
+#   Description: GPT: General Purpose Tools
+"""
+
 """
 #   About all GPT usage method.txt
 """
