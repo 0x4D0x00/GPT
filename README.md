@@ -2,6 +2,9 @@
 """
 #   About all GPT usage method.txt
 """
+
+当你在奇怪为什么有的函数只传一个字符串,有的函数传列表时,请结合多线程模块 mtti 考虑.
+
 """
 #   about mtti usage method
 #   关于多线程工具使用方法
