@@ -1,3 +1,4 @@
+```python
 """
 #   About all GPT usage method.txt
 """
@@ -5,7 +6,6 @@
 #   about mtti usage method
 #   关于多线程工具使用方法
 """
-'''python
 if __name__ == '__main__':
     demo_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     def demo(x):
@@ -16,25 +16,20 @@ if __name__ == '__main__':
     thread_list = mtti.thread_execute_bar(demo, demo_list)
     # or thread_list = mtti.thread_execute_bar(demo, demo_list, task="My Task", max_workers=10)
     print(thread_list)
-'''
 """
 #   about bar usage method
 #   关于进度条工具使用方法
 """
-'''python
 class task:
     def __init__(self):
     self.newlist = []
     def test(self, mylist):
-'''
     """
     #   Following the logic of the display function, after executing the test2 function, continue adding tasks using the add method.
     #   按照展示函数逻辑, 执行结束test2函数之后, 通过add方法继续添加任务。
     """
-    '''python
     self.pbar.add(mylist, last=True, task="test")
     for i in self.pbar:
-    '''
     #   Focus on the above 2 lines.
     #   重点关注以上 2 行。
     if i % 2 == 0:
@@ -74,3 +69,4 @@ if __name__ == "__main__":
     print(newlist)
     test3list = test1.test3()
     print(test3list)
+```
