@@ -30,10 +30,6 @@ if __name__ == '__main__':
 
 
 
-"""
-#   About bar usage method
-#   关于进度条工具使用方法
-"""
 class task:
     def __init__(self):
         self.newlist = []
@@ -47,8 +43,8 @@ class task:
             #   Focus on the above 2 lines.
             #   重点关注以上 2 行。
             if i % 2 == 0:
-            time.sleep(0.05)
-            self.newlist.append(i)
+                time.sleep(0.05)
+                self.newlist.append(i)
         return self.newlist
     def test2(self):
         mylist = []
