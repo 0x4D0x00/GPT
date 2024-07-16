@@ -5,15 +5,25 @@
 #   about mtti usage method
 #   关于多线程工具使用方法
 """
+<br>
 if __name__ == '__main__':
+<br>
     demo_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    <br>
     def demo(x):
+    <br>
         return x * x
+    <br>
     from GPTmtti import MtTi
+    <br>
     mtti = MtTi()
+    <br>
     # thread_list = mtti.thread_execute(demo, demo_list)
+    <br>
     thread_list = mtti.thread_execute_bar(demo, demo_list)
+    <br>
     # or thread_list = mtti.thread_execute_bar(demo, demo_list, task="My Task", max_workers=10)
+    <br>
     print(thread_list)
 
 """
