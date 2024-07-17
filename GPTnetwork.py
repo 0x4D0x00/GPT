@@ -91,10 +91,8 @@ class network:
                 response = method(target, headers=self.headers, verify=verify, timeout=timeout)if data is None else method(target, headers=self.headers, data=data, verify=verify, timeout=timeout)
                 content = response.text
                 self.cookies = response.cookies
-                if response.status_code == 200 and "Not Found" not in content and "Forbidden" not in content and "Unauthorized" not in content and "Bad Request" not in content:
-                    return f"{content}"
-                else:
-                    return None
+                result = f"{content}" if response.status_code == 200 and "Not Found" not in content and "Forbidden" not in content and "Unauthorized" not in content and "Bad Request" not in content else None
+                return result
         except requests.exceptions.RequestException as e:
             print(f"An error occurred: {e}")
             return None
