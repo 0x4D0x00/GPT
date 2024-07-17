@@ -30,6 +30,10 @@ if __name__ == '__main__':
 
 
 
+"""
+#   about bar usage method
+#   关于进度条工具使用方法
+"""
 class task:
     def __init__(self):
         self.newlist = []
