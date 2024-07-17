@@ -45,7 +45,9 @@ class task:
         self.pbar.add(mylist, last=True, task="test")
         for i in self.pbar:
             #   Focus on the above 2 lines.
-            #   重点关注以上 2 行。@last = True !!!***(在你知道test是你最后一个任务时添加last=True参数，这将影响到任务结束之后是否会正确显示进度条，如果添加last=True进度条将不会被你其他print顶替。)
+            #   Adding the last=True parameter when you know that test is your last task will affect whether the progress bar will be displayed correctly after the task ends. If you add last=True, the progress bar will not be replaced by your other prints.
+            #   重点关注以上 2 行
+            #   last = True 在你知道test是你最后一个任务时添加last=True参数，这将影响到任务结束之后是否会正确显示进度条，如果添加last=True进度条将不会被你其他print顶替。
             if i % 2 == 0:
                 time.sleep(0.05)
                 self.newlist.append(i)
