@@ -19,17 +19,15 @@ class readwrite:
         self.excel_path = "test.xlsx"
         self.txt_path = "test.txt"
     
-    def read_text(self, file_path=None, read_method='r', method='read', encoding='utf-8'):
+    def read_text(self, file_path=None, read_method='r', to_list=True, encoding='utf-8'):
         """读取文本文件内容。
         :return: 返回文件中每行的列表，排除空行。
         """
         try:
             with open(file_path, read_method, encoding=encoding) as file:
-                result = file.read() if method == 'read'else [line.strip() for line in bar(file, task="Reading file") if line.strip()]
-                return result
+                return [line.strip() for line in bar(file, task=f"Reading {file_path}") if line.strip()] if to_list else file.read()
         except Exception as e:
-            print(f'读取文件错误: {e}')
-            return None if method == 'read' else []
+            pass
     def write_text(self, file_path=None, write_method='w', encoding='utf-8', lines=None):
         """将列表中的数据写入文本文件。
         :param lines: 字符串列表，每个元素代表一行写入的内容。
@@ -48,25 +46,17 @@ class readwrite:
                 print(f'写入文件错误: {e}')
                 return False
 
-    def read_excel(self, file_path=None, sheet_name=0, header=None, start_row=0, start_col=None):
+    def read_excel(self, file_path=None, to_list=True, sheet_name=0, header=None, start_row=0):
         """直接读取excel文件, 返回DataFrame。
         :param lines: 字符串列表，每个元素代表一行写入的内容。
         """
         try:
-            read_data = pandas.read_excel(file_path, sheet_name, header=header, skiprows=start_row, usecols=start_col)
-            result_list = [' 20% '.join(map(str, row.fillna('NaN').tolist())) for index, row in bar(read_data.iterrows(), task="Reading excel")]
-            return result_list
+            read_data = pandas.read_excel(file_path, sheet_name, header=header, skiprows=start_row) if to_list else pandas.read_excel(file_path, sheet_name, header=header, skiprows=start_row, nrows=1)
+            return [' 20% '.join(map(str, row.fillna('null').tolist())) for index, row in bar(read_data.iterrows(), task=f"Reading {file_path}")] if to_list else [' 20% '.join(map(str, row.fillna('null').tolist())) for index, row in read_data.iterrows()][0]
         except Exception as e:
-            print(f'读取Excel文件错误: {e}')
-            return []
+            pass
     def write_excel(self, file_path=None, data=None, sheet_name="Sheet1"):
         try:
             pandas.DataFrame(data).to_excel(file_path, sheet_name=sheet_name, index=False)
         except:
             pandas.DataFrame({list(data.keys())[0]: data[list(data.keys())[0]]}).to_excel(file_path, sheet_name=sheet_name, index=False)
-        
-if __name__ == '__main__':
-    file_path='test.xlsx'
-    data = {'序号': [1,2,3], '攻击类型': [1,2,3], '分组类型': [1,2,3], '加黑Payload': [1,2,3], '威胁等级': [1,2,3], '白名单报警': [1,2,3], '规则id': [1,2,3], 'APT组织': [1,2,3], '恶意代码家族': [1,2,3], '命中情报厂商': [1,2,3], '攻击IP类型': [1,2,3]}
-    excel_service = readwrite()
-    ml = excel_service.write_excel(file_path, data)
